@@ -6,7 +6,7 @@ class UrlsController < ApplicationController
 
   # POST /urls
   def create
-    @url = Url.new(url_params)
+    @url = current_user.urls.new(url_params)
 
     if @url.save
       redirect_to root_url, notice: 'Url was successfully created.'
