@@ -1,0 +1,17 @@
+<h4 class="mt-5">History</h4>
+
+<table class="table table-striped">
+  <tbody>
+    <% @urls.each do |url| %>
+    <% url_decorator = decorate(url) %>
+      <tr>
+        <td width="45%"><%= link_to nil, url_decorator.source, target: "_blank" %></td>
+        <td width="35%">
+          <%= link_to nil, url_decorator.full_url, target: "_blank"%>
+          <a class="clipboard btn btn-sm btn-dark"
+             data-clipboard-text="<%= url_decorator.full_url %>">Copy</a></td>
+        <td><%= url_decorator.clicks %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

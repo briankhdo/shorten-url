@@ -14,3 +14,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+//= require clipboard
+
+$(document).ready(function(){
+    var clipboard = new Clipboard('.clipboard');
+    clipboard.on('success', function(e) {
+        e.trigger.innerText = 'Copied';
+        setTimeout(function() {
+            e.trigger.innerText = 'Copy'
+        }, 1000);
+    });
+});

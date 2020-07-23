@@ -1,0 +1,10 @@
+<div class="row justify-content-md-center mt-5">
+  <div class="col col-md-2"></div>
+  <div class="col col-md-8 mt-5">
+    <h1 class="mb-4">URL Shortener</h1>
+    <%= render '/urls/form', url: @url %>
+  </div>
+  <div class="col col-md-2"></div>
+</div>
+
+<%= render template: '/urls/index' %>
